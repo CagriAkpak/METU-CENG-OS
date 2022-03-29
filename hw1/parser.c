@@ -7,6 +7,8 @@ int parse(char *line, int is_bundle_creation, parsed_input *parsedInput) {
     char buffer[256];
     int argument_count, argument_index;
     int index;
+    
+    memset(buffer, 0, sizeof(char)*256); 
     if ( is_bundle_creation ) {
         is_quoted = 0;
         index = 0;
