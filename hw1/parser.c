@@ -7,8 +7,8 @@ int parse(char *line, int is_bundle_creation, parsed_input *parsedInput) {
     char buffer[256];
     int argument_count, argument_index;
     int index;
-    
-    memset(buffer, 0, sizeof(char)*256); 
+
+    memset(buffer, 0, sizeof(char)*256);
     if ( is_bundle_creation ) {
         is_quoted = 0;
         index = 0;
@@ -35,9 +35,6 @@ int parse(char *line, int is_bundle_creation, parsed_input *parsedInput) {
             }
         }
 
-        parsedInput->argv = (char **)calloc(argument_count+1, sizeof(char*));
-        parsedInput->argv[argument_count] = NULL;
-
         is_quoted = 0;
         index = 0;
         for ( char *current = line; *current ; current++) {
@@ -57,6 +54,10 @@ int parse(char *line, int is_bundle_creation, parsed_input *parsedInput) {
                         return 1;
                     }
                     buffer[index++] = '\0';
+                    if ( argument_index == 0 ) {
+                        parsedInput->argv = (char **)calloc(argument_count+1, sizeof(char*));
+                        parsedInput->argv[argument_count] = NULL;
+                    }
                     parsedInput->argv[argument_index] = (char*) calloc(index, sizeof(char));
                     strcpy(parsedInput->argv[argument_index], buffer);
                     index = 0;
@@ -166,4 +167,5 @@ int parse(char *line, int is_bundle_creation, parsed_input *parsedInput) {
             }
         }
     }
+    return 0;
 }
