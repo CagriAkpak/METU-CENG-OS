@@ -3,4 +3,6 @@
 
 - Homework text and parser files have been added to the folder.
 
-- An example shell application. Additional tester and grader will be added later. 
+- Shell application for solution is added.
+
+- Parser updated to fix a small memory leak issue and return warning.
