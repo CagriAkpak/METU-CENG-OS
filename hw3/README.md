@@ -3,3 +3,4 @@
 
 - Homework text and fat32.h files have been added.
 - Example image file will be added later this week.
+- Simple parser has been added.
