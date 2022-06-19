@@ -34,7 +34,9 @@ It will give you the difference in inputs between solution and your code. They w
 Before running your codes, you need to create outputs folder. You can run them with following format:
 
 mkdir outputs
+
 ./hw1 < inputs/inputX.txt
+
 
 were X is the number of the testcase you want to run. There are 50 testcases each and they all are 2 points. If there are redirections in the testcase, the outputs will be create in the outputs directory. Their names will be in this format tXoN.txt where X is similarly the testcase number and N is the which pipeline produced that output. Of course if there are no redirections, it will be printed to stdout as per your code.
 
