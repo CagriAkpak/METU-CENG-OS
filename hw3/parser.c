@@ -35,7 +35,7 @@ void parse(parsed_input* inp, char *line) {
 
     size = strlen(tmp);
 
-    inp->arg1 = (char*) calloc(size, sizeof(char));
+    inp->arg1 = (char*) calloc(size+1, sizeof(char));
     strcpy(inp->arg1, tmp);
 
     tmp = strtok(NULL, " ");
@@ -43,7 +43,7 @@ void parse(parsed_input* inp, char *line) {
     if ( tmp ) {
         size = strlen(tmp);
 
-        inp->arg2 = (char*) calloc(size, sizeof(char));
+        inp->arg2 = (char*) calloc(size+1, sizeof(char));
         strcpy(inp->arg2, tmp);
     }
 }
