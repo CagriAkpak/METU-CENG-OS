@@ -30,13 +30,20 @@ void parse(parsed_input* inp, char *line) {
     else if ( !strcmp(tmp, "cat") ) {
         inp->type = CAT;
     }
+    else if ( !strcmp(tmp, "quit") ) {
+        inp->type = QUIT;
+    }else{
+        inp->type = ERR;
+    }
 
     tmp = strtok(NULL, " ");
 
-    size = strlen(tmp);
+    if ( tmp ) {
+        size = strlen(tmp);
 
-    inp->arg1 = (char*) calloc(size+1, sizeof(char));
-    strcpy(inp->arg1, tmp);
+        inp->arg1 = (char*) calloc(size+1, sizeof(char));
+        strcpy(inp->arg1, tmp);
+    }
 
     tmp = strtok(NULL, " ");
 
@@ -48,7 +55,8 @@ void parse(parsed_input* inp, char *line) {
     }
 }
 void clean_input(parsed_input* inp) {
-    free(inp->arg1);
+    if ( inp->arg1 )
+        free(inp->arg1);
     if ( inp->arg2 )
         free(inp->arg2);
 }
