@@ -60,3 +60,67 @@ void clean_input(parsed_input* inp) {
     if ( inp->arg2 )
         free(inp->arg2);
 }
+
+char** tokenizePath(char* p){
+    if(!p){
+        char** ret = (char**)malloc(sizeof(char*));
+        ret[0] = NULL;
+        return ret;
+    }
+
+	char* tmp;
+	int len = strlen(p);
+    if(len==0){
+        char** ret = (char**)malloc(sizeof(char*));
+        ret[0] = NULL;
+        return ret;
+    }
+    int count = 1;
+
+	if ( p[len-1] == '\n' )
+	p[len-1] = '\0';
+
+    if(p[len-1]=='/')count--;
+
+    for(int i=0;i<len;i++){
+        if(p[i]=='/')count++;
+    }
+
+    char** ret = (char**)malloc(sizeof(char*)*(count+1));
+    int i=0;
+
+    //* change this flag if you want to have / for paths starting from root. Currently it is ""(empty string) instead of "/"
+    int useSlashAsRootToken = 0;
+
+    if(p[0]=='/'){
+        if(useSlashAsRootToken){
+            ret[0] = (char*) calloc(2, sizeof(char));
+            ret[0][0] = '/';
+            ret[0][1] = '\0';
+        }else{
+            ret[0] = (char*) calloc(1, sizeof(char));
+            ret[0][0] = '\0';
+        }
+        i++;
+    }
+
+    int f = 1;
+    for(;i<count;i++){
+        tmp = strtok(f?p:NULL, "/");
+        f=0;
+
+        int size = strlen(tmp);
+        ret[i] = (char*) calloc(size+1, sizeof(char));
+        strcpy(ret[i], tmp);
+    }
+
+    ret[count] = NULL;
+    return ret;
+}
+
+void clean_tokenized_path(char** nameList){
+    for (int i = 0; nameList[i]; i++){
+        free(nameList[i]);
+    }
+    free(nameList);
+}
