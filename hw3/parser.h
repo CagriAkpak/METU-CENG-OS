@@ -14,7 +14,9 @@ typedef enum input_type {
     MKDIR,
     TOUCH,
     MV,
-    CAT
+    CAT,
+    QUIT,
+    ERR
 }input_type;
 
 typedef struct parsed_input {
