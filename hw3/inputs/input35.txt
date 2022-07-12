@@ -1,0 +1,2 @@
+cat /folder3/folder2/folder5/file1
+quit

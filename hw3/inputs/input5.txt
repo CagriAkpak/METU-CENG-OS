@@ -1,0 +1,2 @@
+cd /folder1/folder2/folder6
+quit

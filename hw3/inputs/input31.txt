@@ -1,0 +1,2 @@
+cat ./file2
+quit

@@ -1,0 +1,2 @@
+mkdir ./folder2/folder8
+quit

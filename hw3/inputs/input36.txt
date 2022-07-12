@@ -1,0 +1,3 @@
+cd folder3/folder4
+cat file3
+quit

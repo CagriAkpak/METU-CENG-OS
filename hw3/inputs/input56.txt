@@ -1,0 +1,2 @@
+mkdir /folder9
+quit

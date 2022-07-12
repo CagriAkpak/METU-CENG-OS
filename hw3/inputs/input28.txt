@@ -1,0 +1,3 @@
+cd /folder2
+ls -l
+quit

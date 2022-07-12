@@ -1,0 +1,2 @@
+ls -l folder1
+quit

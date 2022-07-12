@@ -1,0 +1,2 @@
+ls -l ./folder2
+quit

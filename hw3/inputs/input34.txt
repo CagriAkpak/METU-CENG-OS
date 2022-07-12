@@ -1,0 +1,2 @@
+cat ./folder2/file1
+quit

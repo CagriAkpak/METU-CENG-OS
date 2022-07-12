@@ -1,0 +1,3 @@
+cd folder2
+cd ./folder5
+quit

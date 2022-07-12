@@ -1,0 +1,8 @@
+/> -rwx------ 1 root root 1182 Jun 19 18:04 file1
+-rwx------ 1 root root 1674 Jun 19 18:04 file2
+-rwx------ 1 root root  470 Jun 19 18:04 file3
+-rwx------ 1 root root 3326 Jul 12 00:05 file8
+drwx------ 1 root root    0 Jun 19 18:04 folder1
+drwx------ 1 root root    0 Jun 19 18:04 folder2
+drwx------ 1 root root    0 Jun 19 18:04 folder3
+/> 

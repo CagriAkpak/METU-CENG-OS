@@ -1,0 +1,3 @@
+cd ./folder2/folder6
+cat ../file4
+quit

@@ -1,0 +1,2 @@
+ls -l /folder3
+quit

@@ -1,0 +1,3 @@
+cd folder1
+ls -l
+quit
